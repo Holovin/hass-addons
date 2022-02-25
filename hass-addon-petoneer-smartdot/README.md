@@ -1,4 +1,4 @@
-# Home Assistant Petoneer Smart Dot Add-on
+# Home Assistant Petoneer Smart Dot Add-on 123
 
 An add-on to integrate [Petoneer Smart Dot](https://www.petoneer.com/playdot) with Home Assistant.
 

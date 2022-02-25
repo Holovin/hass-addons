@@ -29,13 +29,13 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="marcomow" \
+    maintainer="holovin" \
     org.label-schema.description="Add-on for Home Assistant to control Petoneer's Smart Dot" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="smartdot" \
     org.label-schema.schema-version="1.0" \
-    org.label-schema.url="https://github.com/marcomow/hass-addons/tree/master/smartdot" \
-    org.label-schema.usage="https://github.com/marcomow/hass-addons/tree/master/smartdot/README.md" \
+    org.label-schema.url="https://github.com/holovin/hass-addons/tree/master/smartdot" \
+    org.label-schema.usage="https://github.com/holovin/hass-addons/tree/master/smartdot/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/marcomow/hass-addons/tree/master/smartdot" \
+    org.label-schema.vcs-url="https://github.com/holovin/hass-addons/tree/master/smartdot" \
     org.label-schema.vendor="Community Hass.io Addons"
