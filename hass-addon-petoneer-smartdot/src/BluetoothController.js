@@ -28,6 +28,8 @@ module.exports.BluetoothController = class BluetoothController {
         noble.on('warning', console.log);
 
         noble.on('discover', async (peripheral) => {
+            console.log(peripheral);
+
             if (AUTO_DETECTION_NAMES.includes(peripheral.advertisement?.localName)) {
                 console.log(peripheral.advertisement?.localName);
                 this.peripheral = peripheral;
