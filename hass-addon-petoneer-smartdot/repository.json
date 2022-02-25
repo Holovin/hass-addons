@@ -1,5 +1,5 @@
 {
-    "name": "Petoneer Smart Dot controller",
-    "url": "https://github.com/marcomow/hass-addons/tree/master/hass-addon-petoneer-smartdot",
-    "maintainer": "marcomow <marko@kolombo.dev>"
+    "name": "Petoneer Smart Dot controller Ho",
+    "url": "https://github.com/Holovin/hass-addons/tree/master/hass-addon-petoneer-smartdot",
+    "maintainer": "Alex Holovin (forked from marcomow <marko@kolombo.dev>)"
 }
