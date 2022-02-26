@@ -1,6 +1,6 @@
 {
   "name": "smartdot",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Home Assistant add-on to control Petoneer Smart Dot Ho",
   "main": "index.js",
   "author": "holovin",

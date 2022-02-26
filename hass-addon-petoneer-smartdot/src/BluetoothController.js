@@ -1,7 +1,7 @@
 const noble = require('@abandonware/noble');
 
 // const serviceUuid = 'fff0';
-const serviceUuid = 'A201';
+const serviceUuid = 'a201';
 const commands = {
     stop: '0f0407000008',
     preset_small: '0f0405000107',
@@ -17,6 +17,10 @@ module.exports.BluetoothController = class BluetoothController {
     }
 
     async initialize() {
+        noble.on('scanStart', () => {
+            console.log('Start scanning...');
+        });
+
         noble.on('stateChange', async (state) => {
             console.log(state);
 
@@ -24,11 +28,15 @@ module.exports.BluetoothController = class BluetoothController {
                 await noble.startScanningAsync([serviceUuid]);
             }
         });
+
         noble.on('scanStop', () => noble.startScanningAsync([serviceUuid]));
-        noble.on('warning', console.log);
+
+        noble.on('warning', (msg) => {
+            console.warn(`[WARN] ${msg}`);
+        });
 
         noble.on('discover', async (peripheral) => {
-            console.log(peripheral);
+            console.log(peripheral.address);
 
             if (AUTO_DETECTION_NAMES.includes(peripheral.advertisement?.localName)) {
                 console.log(peripheral.advertisement?.localName);
@@ -62,7 +70,7 @@ module.exports.BluetoothController = class BluetoothController {
                     throw new Error(`command "${command}" not recognized.`);
                 }
 
-                const buffer = Buffer.from(stringCommand, "hex");
+                const buffer = Buffer.from(stringCommand, 'hex');
                 const result = await movementCharacteristic.writeAsync(buffer, false);
                 
                 console.log({ command, stringCommand, buffer, result });
@@ -72,6 +80,7 @@ module.exports.BluetoothController = class BluetoothController {
 
             } catch (error) {
                 console.log(error)
+
                 await this.peripheral.disconnectAsync();
                 resolve(false);
             }
